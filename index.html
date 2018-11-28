@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whatsapp Made Easy</title>
+  <link rel="stylesheet" href="css/intlTelInput.css">
+  <link rel="stylesheet" href="css/demo.css">
+</head>
+
+<body>
+  <h2>Enter number and chat</h2>
+  <h4>Insert a valid whatsapp number and chat with the person</h4>
+  <h4>Advantages</h4>
+  <ul>
+  <li>No need to save number to start chatting !!</li>
+  <li>Enter your number and chat with yourself !!</li>
+  </ul>
+  <p><small>PS: Works only on whatsapp installed mobile. No desktop support</small></p>
+  <br />
+  <form onsubmit="myFunction()" action="http://api.whatsapp.com/send" method="get">
+    <input id="phone" name="phone" type="tel">
+    <br/>
+    <br/>
+    <button type="submit">Submit</button>
+  </form>
+  <p><small>The country code drop down functionality is taken from <a href="https://github.com/jackocnr/intl-tel-input">GitHub</a>. The copy right of it belongs to original developer.</small></p>
+  <p><small>Whatsapp is a copyright property of <a href="https://www.whatsapp.com/">Whatsapp Inc</a>. The copyright of API's used belong to WhatsApp.</small></p>
+  <script src="js/intlTelInput.js"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    var iti = window.intlTelInput(input, {
+      initialCountry: "in",
+      utilsScript: "js/utils.js",
+      customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+    	return "9400000000 ";
+  		},
+    });
+	function myFunction() {
+    number=iti.getNumber(intlTelInputUtils.numberFormat.E164);	
+    number = number.substring(1);
+  	input.value=number;
+	}
+  </script>
+  
+</body>
+</html>
