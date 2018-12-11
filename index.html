@@ -6,24 +6,41 @@
       <title>Whatsapp Made Easy</title>
       <link rel="stylesheet" href="css/intlTelInput.css">
       <link rel="stylesheet" href="css/demo.css">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/custom.css">
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
       <meta name="description" content="Website to chat with people on Whatsapp without saving number. Whatsapp self chat also possible">
    </head>
    <body>
-      <h2>Enter number and chat</h2>
-      <h4>Insert a valid whatsapp number and chat with the person</h4>
-      <h4>Advantages</h4>
-      <ul>
-         <li>No need to save number to start chatting !!</li>
-         <li>Enter your number and chat with yourself !!</li>
-	 <li>Enter a pre filled message if you wish to !! </li>
-      </ul>
+
+   <nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark  bg-whatsapp main-nav">
+    <div class="container">
+        <ul class="nav navbar-nav mx-auto">
+            <h2 style="color:white;">Whatsapp Made Easy</h2>
+        </ul>
+    </div>
+</nav>
+
+ <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Enter number and chat</h1>
+          <p class="lead text-muted">Insert a valid whatsapp number and chat with the person.</p>
+           <u><p class="lead text-muted">Advantages</p></u>
+          <p class="lead text-muted">No need to save number to start chatting</p>
+         <p class="lead text-muted">Enter your number and chat with yourself</p>
+	  <p class="lead text-muted">Enter a pre filled message if you wish to</p>
+      
       <p><small>PS: Works only on whatsapp installed mobile. No desktop support</small></p>
+        </div>
+      </section>
+
       <br />
       <form onsubmit="myFunction()" action="https://api.whatsapp.com/send" method="get">
-         Phone number (optional): <input id="phone" name="phone" type="tel">
+       <input id="phone" name="phone" type="tel" placeholder="Phone number (optional)">
          <br />
          <br />
-	 Message (optional): <textarea name="text"> </textarea>
+	 <textarea name="text" placeholder="Message"> </textarea>
 	 <br />
 	 
 	<br />
@@ -36,10 +53,7 @@
          var input = document.querySelector("#phone");
          var iti = window.intlTelInput(input, {
            initialCountry: "in",
-           utilsScript: "js/utils.js",
-           customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
-         	return "9400000000 ";
-         },
+           utilsScript: "js/utils.js"
          });
          function myFunction() {
          number=iti.getNumber(intlTelInputUtils.numberFormat.E164);	
