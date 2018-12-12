@@ -2,6 +2,7 @@
 <html>
    <head>
       <meta charset="utf-8">
+       <meta name="theme-color" content="#128C7E"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="icon" href="img/favicon.jpg"  sizes="16x16"> 
       <title>WhatsApp Made Easy</title>
@@ -68,5 +69,12 @@
          input.value=number;
          }
       </script>
+      <script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+</script>
    </body>
 </html>
