@@ -3,9 +3,8 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Whatsapp Made Easy</title>
+      <title>WhatsApp Made Easy</title>
       <link rel="stylesheet" href="css/intlTelInput.css">
-      <link rel="stylesheet" href="css/demo.css">
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="css/custom.css">
       <script type="text/javascript" src="js/jquery.js"></script>
@@ -24,30 +23,35 @@
 
  <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Enter number and chat</h1>
-          <p class="lead text-muted">Insert a valid whatsapp number and chat with the person.</p>
+          <h4 class="jumbotron-heading">Enter a WhatsApp number and chat</h3>
+           <form onsubmit="myFunction()" action="https://api.whatsapp.com/send" method="get">
+  			<div class="form-group">
+    
+   <input class="form-control" id="phone" name="phone" type="tel" placeholder="Phone number (optional)">
+  </div>
+  <div class="form-group">
+    <input class="form-control " type="text" name="text" placeholder="Message (optional)">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
            <u><p class="lead text-muted">Advantages</p></u>
           <p class="lead text-muted">No need to save number to start chatting</p>
          <p class="lead text-muted">Enter your number and chat with yourself</p>
 	  <p class="lead text-muted">Enter a pre filled message if you wish to</p>
       
-      <p><small>PS: Works only on whatsapp installed mobile. No desktop support</small></p>
+      <p><small>PS: Works only on whatsApp installed mobile. No desktop support</small></p>
         </div>
+
+         <p><small>The country code drop down functionality is taken from <a href="https://github.com/jackocnr/intl-tel-input">GitHub</a>. The copy right of it belongs to original developer.</small></p>
+         <p><small>WhatsApp is a copyright property of <a href="https://www.whatsapp.com/">WhatsApp Inc</a>. The copyright of API's used belong to WhatsApp.</small></p>
+
       </section>
 
-      <br />
-      <form onsubmit="myFunction()" action="https://api.whatsapp.com/send" method="get">
-       <input id="phone" name="phone" type="tel" placeholder="Phone number (optional)">
-         <br />
-         <br />
-	 <textarea name="text" placeholder="Message"> </textarea>
-	 <br />
-	 
-	<br />
-         <button type="submit">Submit</button>
-         <p><small>The country code drop down functionality is taken from <a href="https://github.com/jackocnr/intl-tel-input">GitHub</a>. The copy right of it belongs to original developer.</small></p>
-         <p><small>Whatsapp is a copyright property of <a href="https://www.whatsapp.com/">Whatsapp Inc</a>. The copyright of API's used belong to WhatsApp.</small></p>
-      </form>
+
+      
+        
+
       <script src="js/intlTelInput.js"></script>
       <script>
          var input = document.querySelector("#phone");
